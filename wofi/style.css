@@ -1,0 +1,45 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", monospace;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+}
+
+window {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#input {
+    margin: 5px;
+    padding: 5px;
+    background-color: #222222;
+    color: #ffffff;
+}
+
+#inner-box {
+    margin: 5px;
+}
+
+#outer-box {
+
+}
+
+#scroll {
+
+}
+
+#text {
+    padding: 5px;
+}
+
+#entry {
+    padding: 5px;
+}
+
+#entry:selected {
+    background-color: #333333;
+    color: #ffffff;
+}

@@ -1,0 +1,133 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #000000;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+#workspaces {
+    margin: 0 6px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background: transparent;
+    color: #ffffff;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+#workspaces button.focused {
+    background: #333333;
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #ff5555;
+}
+
+#workspaces button:hover {
+    background: #222222;
+    box-shadow: inherit;
+}
+
+#window {
+    font-weight: bold;
+    color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#custom-weather,
+#custom-settings,
+#custom-power,
+#cpu,
+#memory,
+#network,
+#bluetooth,
+#pulseaudio,
+#battery,
+#temperature,
+#clock {
+    padding: 0 10px;
+    margin: 0 2px;
+    color: #ffffff;
+}
+
+#custom-weather {
+    font-size: 18px;
+}
+
+#custom-settings {
+    font-size: 16px;
+}
+
+#custom-power {
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+#network {
+    font-size: 16px;
+}
+
+#bluetooth {
+    font-size: 16px;
+}
+
+#cpu {
+    background-color: #333333;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+#memory {
+    background-color: #333333;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+#battery {
+    background-color: #333333;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #ffbe6f;
+    color: #000000;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ff5555;
+    color: #ffffff;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #ff5555;
+    }
+}
+
+#clock {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+tooltip {
+    background: rgba(40, 40, 40, 0.9);
+    border: 1px solid #555555;
+}
+
+tooltip label {
+    color: #ffffff;
+}
