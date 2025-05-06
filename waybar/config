@@ -5,9 +5,9 @@
     "spacing": 5,
     "background": "#000000",
 
-    "modules-left": ["sway/workspaces", "temperature"],
+    "modules-left": ["sway/workspaces", "custom/weather"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "bluetooth", "cpu", "memory", "battery", "clock", "custom/power"    ],
+    "modules-right": ["network", "bluetooth", "cpu", "memory", "disk", "battery", "clock", "custom/power"],
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -29,21 +29,15 @@
 
     "custom/weather": {
         "format": "{}",
-        "exec": "echo '󰼳'",
-        "interval": 3600,
+        "exec": "curl -s 'https://wttr.in/?format=%c+%t'",
+        "interval": 1800,
         "tooltip": false
-    },
-
-    "custom/settings": {
-        "format": "⚙",
-        "tooltip": false,
-        "on-click": "swaymsg exec gnome-control-center"
     },
 
     "custom/power": {
         "format": "⏻",
         "tooltip": false,
-        "on-click": "swaymsg exec wlogout"
+        "on-click": "~/.config/sway/scripts/powermenu.sh"
     },
 
     "clock": {
@@ -53,67 +47,53 @@
     },
 
     "cpu": {
-        "format": "{usage}%",
+        "format": "󰻠 {usage}%",
         "tooltip": true,
         "interval": 2
     },
 
     "memory": {
-        "format": "{percentage}%",
+        "format": "󰍛 {percentage}%",
         "tooltip": true
     },
 
-    "temperature": {
-        "format": "{temperatureC}°c",
-        "critical-threshold": 80,
-        "format-critical": "{temperatureC}°c"
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/"
     },
 
     "network": {
-        "format-wifi": "󰤨",
-        "format-ethernet": "󰈀",
-        "format-linked": "󰈀",
-        "format-disconnected": "󰤮",
+        "format-wifi": " 󰖩 ",
+        "format-ethernet": " 󰈀 ",
+        "format-linked": " 󰌹 ",
+        "format-disconnected": " 󰖪 ",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format": "{essid} ({signalStrength}%)"
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "~/.config/sway/scripts/wifimenu.sh"
     },
 
     "bluetooth": {
-        "format": "󰂯",
-        "format-connected": "󰂱",
-        "format-disabled": "󰂲",
-        "on-click": "blueman-manager",
+        "format": " 󰂯 ",
+        "format-connected": " 󰂱 ",
+        "format-disabled": " 󰂲 ",
+        "on-click": "~/.config/sway/scripts/bluetoothmenu.sh",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}"
     },
 
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-bluetooth": "󰂰",
-        "format-bluetooth-muted": "󰂲",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "󰋎",
-            "headset": "󰋎",
-            "phone": "󰏲",
-            "portable": "󰄝",
-            "car": "󰄋",
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "pavucontrol"
-    },
-
     "battery": {
-        "format": "{capacity}%",
-        "format-charging": "{capacity}%",
-        "format-plugged": "{capacity}%",
-        "format-alt": "{time}",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "bat": "BAT0",
+        "adapter": "AC",
+        "interval": 30,
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "interval": 30
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-alt": "{time}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"]
     }
 }

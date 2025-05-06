@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrains Mono", "Font Awesome 6 Free", monospace;
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", "Noto Sans", sans-serif;
     font-size: 14px;
     min-height: 0;
 }
@@ -50,6 +50,7 @@ window#waybar {
 #custom-power,
 #cpu,
 #memory,
+#disk,
 #network,
 #bluetooth,
 #pulseaudio,
@@ -57,70 +58,66 @@ window#waybar {
 #temperature,
 #clock {
     padding: 0 10px;
-    margin: 0 2px;
+    margin: 0 4px;
     color: #ffffff;
 }
 
 #custom-weather {
-    font-size: 18px;
-}
-
-#custom-settings {
     font-size: 16px;
+    margin-left: 5px;
 }
 
 #custom-power {
     font-size: 16px;
-    margin-right: 6px;
+    margin-right: 12px;
 }
 
 #network {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 #bluetooth {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 #cpu {
-    background-color: #333333;
-    border-radius: 3px;
-    margin-right: 5px;
+    margin-right: 3px;
+    font-size: 15px;
 }
 
 #memory {
-    background-color: #333333;
-    border-radius: 3px;
-    margin-right: 5px;
+    margin-right: 3px;
+    font-size: 15px;
+}
+
+#disk {
+    margin-right: 3px;
+    font-size: 15px;
 }
 
 #battery {
-    background-color: #333333;
-    border-radius: 3px;
-    margin-right: 5px;
+    margin-right: 3px;
+    font-size: 15px;
 }
 
 #battery.warning:not(.charging) {
-    background-color: #ffbe6f;
-    color: #000000;
+    color: #ffbe6f;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #ff5555;
-    color: #ffffff;
+    color: #ff5555;
     animation: blink 0.5s linear infinite alternate;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #ff5555;
+        color: #ffffff;
     }
 }
 
 #clock {
     font-weight: bold;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 tooltip {
