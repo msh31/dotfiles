@@ -7,7 +7,7 @@
 
     "modules-left": ["sway/workspaces", "custom/weather"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "bluetooth", "cpu", "memory", "disk", "battery", "clock", "custom/power"],
+    "modules-right": ["network", "bluetooth", "pulseaudio", "cpu", "memory", "disk", "battery", "clock", "custom/power"],
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -47,13 +47,13 @@
     },
 
     "cpu": {
-        "format": "󰻠 {usage}%",
+        "format": "󰍛 {usage}%",
         "tooltip": true,
         "interval": 2
     },
 
     "memory": {
-        "format": "󰍛 {percentage}%",
+        "format": "󰆼 {percentage}%",
         "tooltip": true
     },
 
@@ -80,6 +80,15 @@
         "on-click": "~/.config/sway/scripts/bluetoothmenu.sh",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}"
+    },
+
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰖁 Muted",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "tooltip": false
     },
 
     "battery": {

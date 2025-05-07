@@ -80,6 +80,11 @@ window#waybar {
     font-size: 15px;
 }
 
+#pulseaudio {
+    font-size: 15px;
+    margin-right: 3px;
+}
+
 #cpu {
     margin-right: 3px;
     font-size: 15px;
