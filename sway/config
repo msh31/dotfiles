@@ -1,4 +1,5 @@
 exec swaybg -i ~/.config/sway/wallpaper.png -m fill
+#exec /usr/lib/lxqt-policykit/lxqt-policykit-agent
 
 ### Variables
 #
@@ -200,7 +201,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 # Add power menu
 bindsym $mod+x exec ~/.config/sway/scripts/powermenu.sh
@@ -209,6 +210,10 @@ bindsym $mod+x exec ~/.config/sway/scripts/powermenu.sh
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# border settings
+default_border pixel 1
+default_floating_border none
 
 include /etc/sway/config.d/*
 
