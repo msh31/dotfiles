@@ -1,135 +1,33 @@
 * {
     border: none;
-    border-radius: 0;
-    font-family: "JetBrains Mono", "Font Awesome 6 Free", "Noto Sans", sans-serif;
+    font-family: "JetBrains Mono", sans-serif;
     font-size: 14px;
-    min-height: 0;
 }
 
 window#waybar {
-    background: #000000;
+    background-color: rgba(43, 48, 59, 0.9);
     color: #ffffff;
-    border-bottom: none;
-}
-
-#workspaces {
-    margin: 0 6px;
 }
 
 #workspaces button {
-    padding: 0 10px;
-    background: transparent;
+    padding: 0 5px;
+    background-color: transparent;
     color: #ffffff;
-    border-bottom: none;
-    font-weight: bold;
-}
-
-#workspaces button.focused {
-    background: #333333;
-    color: #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #ff5555;
 }
 
 #workspaces button:hover {
-    background: #222222;
-    box-shadow: inherit;
+    background: rgba(0, 0, 0, 0.2);
 }
 
-#window {
-    font-weight: bold;
-    color: #ffffff;
-    padding-left: 10px;
-    padding-right: 10px;
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
 }
 
-#custom-weather,
-#custom-settings,
-#custom-power,
-#cpu,
-#memory,
-#disk,
-#network,
-#bluetooth,
-#pulseaudio,
-#battery,
-#temperature,
-#clock {
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode, #clock, #pulseaudio, #network, #window {
     padding: 0 10px;
-    margin: 0 4px;
-    color: #ffffff;
-}
-
-#custom-weather {
-    font-size: 16px;
-    margin-left: 5px;
-}
-
-#custom-power {
-    font-size: 16px;
-    margin-right: 12px;
-}
-
-#network {
-    font-size: 15px;
-}
-
-#bluetooth {
-    font-size: 15px;
-}
-
-#pulseaudio {
-    font-size: 15px;
-    margin-right: 3px;
-}
-
-#cpu {
-    margin-right: 3px;
-    font-size: 15px;
-}
-
-#memory {
-    margin-right: 3px;
-    font-size: 15px;
-}
-
-#disk {
-    margin-right: 3px;
-    font-size: 15px;
-}
-
-#battery {
-    margin-right: 3px;
-    font-size: 15px;
-}
-
-#battery.warning:not(.charging) {
-    color: #ffbe6f;
-}
-
-#battery.critical:not(.charging) {
-    color: #ff5555;
-    animation: blink 0.5s linear infinite alternate;
-}
-
-@keyframes blink {
-    to {
-        color: #ffffff;
-    }
-}
-
-#clock {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-tooltip {
-    background: rgba(40, 40, 40, 0.9);
-    border: 1px solid #555555;
-}
-
-tooltip label {
-    color: #ffffff;
 }

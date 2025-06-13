@@ -1,25 +1,32 @@
-exec swaybg -i ~/.config/sway/wallpaper.png -m fill
-#exec /usr/lib/lxqt-policykit/lxqt-policykit-agent
+### Marco's Sway Config | Fedora
+
 
 ### Variables
 #
-# Mod4=WinKey Use Mod1 for Alt.
+# Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-
-include /etc/sway/config-vars.d/*
+# Your preferred terminal emulator
+set $term foot
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $rofi_cmd rofi \
+        -terminal '$term'
+# Shows a combined list of the applications with desktop files and xecutables from PATH.
+set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+# Swaybar no more, we usin Waybar
+# Kills the old bar and launches a new one on every reload
+exec_always --no-startup-id "killall -q waybar; sleep 0.2; waybar"
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# This is commented in Debian, because the Sway wallpaper files are in a separate
-# package `sway-backgrounds`. Installing this package drops a config file to
-# /etc/sway/config.d/
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# Requires: desktop-backgrounds-compat, swaybg
+output * bg ~/Pictures/wallpaper.png fill
 #
 # Example configuration:
 #
@@ -42,27 +49,28 @@ include /etc/sway/config-vars.d/*
 
 ### Input configuration
 #
-# Example configuration:
+# Logitech G502
 #
    input "1133:16511:Logitech_G502" {
     accel_profile "flat"
    }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
-
+#
+# Basics:
+#
     # Start a terminal
-    bindsym $mod+Return exec kitty
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # Start launcher
-    bindsym $mod+d exec wofi --show=drun
+    # Start your launcher
+    bindsym $mod+d exec $menu
 
-    # Start file manager
+    # Start FIle Manager (Nemo)
     bindsym $mod+e exec nemo
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -189,36 +197,28 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+
+# Include configs from 3 locations:
+#  - /usr/share/sway/config.d
+#  - /etc/sway/config.d
+#  - $XDG_CONFIG_HOME/sway/config.d ($HOME/.config/sway/config.d)
 #
-# Utilities:
+# If multiple directories contain the files with the same name, the later
+# directory takes precedence; `$XDG_CONFIG_HOME/sway/config.d/20-swayidle.conf`
+# will always be loaded instead of `/usr/share/sway/config.d/20-swayidle.conf`
+# or `/etc/sway/config.d/20-swayidle.conf`
 #
-    # Special keys to adjust volume via PulseAudio
-    bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim -g "$(slurp)" - | wl-copy
-
-# Add power menu
-bindsym $mod+x exec ~/.config/sway/scripts/powermenu.sh
-
-# Add media keys
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-# border settings
-default_border pixel 1
-default_floating_border none
-
-include /etc/sway/config.d/*
-
-exec_always {
-    killall -q waybar || true
-    sleep 1
-    waybar
-}
+# This mechanism permits overriding our default configuration per-system
+# (/etc) or per-user ($XDG_CONFIG_HOME) basis. Just create the file you
+# want to modify/override in the higher-level directory.
+#
+# For example, to disable the default bar from Fedora configs, you'll need to
+#     $ echo -n > "$HOME/.config/sway/config.d/90-bar.conf"
+#
+# Note the quoting, the $() and the arguments quoting. All the parts are equally
+# important to make the magic work. And if you want to learn the secret behind
+# the trick, it's all in the `wordexp(3)`.
+#
+include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'

@@ -1,108 +1,46 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 24,
-    "spacing": 5,
-    "background": "#000000",
-
-    "modules-left": ["sway/workspaces", "custom/weather"],
+    "height": 30,
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "bluetooth", "pulseaudio", "cpu", "memory", "disk", "battery", "clock", "custom/power"],
+    "modules-right": ["pulseaudio", "network", "clock"],
 
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{name}",
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": []
+        "format": "{name} {icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
         }
     },
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 50,
-        "tooltip": false
-    },
-
-    "custom/weather": {
-        "format": "{}",
-        "exec": "curl -s 'https://wttr.in/?format=%c+%t'",
-        "interval": 1800,
-        "tooltip": false
-    },
-
-    "custom/power": {
-        "format": "⏻",
-        "tooltip": false,
-        "on-click": "~/.config/sway/scripts/powermenu.sh"
-    },
-
     "clock": {
-        "format": "{:%b %d %Y %H:%M:%S}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "interval": 1
+        "format": "{:%A, %B %d %Y - %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
-
-    "cpu": {
-        "format": "󰍛 {usage}%",
-        "tooltip": true,
-        "interval": 2
-    },
-
-    "memory": {
-        "format": "󰆼 {percentage}%",
-        "tooltip": true
-    },
-
-    "disk": {
-        "interval": 30,
-        "format": "󰋊 {percentage_used}%",
-        "path": "/"
-    },
-
     "network": {
-        "format-wifi": " 󰖩 ",
-        "format-ethernet": " 󰈀 ",
-        "format-linked": " 󰌹 ",
-        "format-disconnected": " 󰖪 ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "~/.config/sway/scripts/wifimenu.sh"
+        "format-wifi": "  {essid}",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr} "
     },
-
-    "bluetooth": {
-        "format": " 󰂯 ",
-        "format-connected": " 󰂱 ",
-        "format-disabled": " 󰂲 ",
-        "on-click": "~/.config/sway/scripts/bluetoothmenu.sh",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}"
-    },
-
     "pulseaudio": {
-        "format": "󰕾 {volume}%",
-        "format-muted": "󰖁 Muted",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-        "tooltip": false
-    },
-
-    "battery": {
-        "bat": "BAT0",
-        "adapter": "AC",
-        "interval": 30,
-        "states": {
-            "warning": 30,
-            "critical": 15
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": " Muted",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰚥 {capacity}%",
-        "format-alt": "{time}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"]
+        "scroll-step": 5
     }
 }

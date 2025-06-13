@@ -1,27 +1,27 @@
-# sway-env
+# dotfiles
 
-A minimal, fast, and keyboard-driven Sway (Wayland) desktop environment setup for **Ubuntu 24.04**.
+A minimal, fast, and keyboard-driven Sway (Wayland) desktop environment setup for **Fedora Sericea**.
 
 This setup includes customized dotfiles and install scripts to get a tiling Wayland session running with Sway, Waybar, and other utilities — all with a clean look and efficient workflow.
 
+<!-- gotta update this later -->
 ![screenshot](https://i.imgur.com/NzYx7Fo.png)
 
 ## Features
 
 - **Sway** for tiling Wayland window management
 - **Waybar** for a sleek and responsive status bar
-- Power and lock tools via **wlogout**, **swaylock**
-- Fonts, themes, and wallpapers included
+- Fonts and wallpapers included
 - Lightweight and easy to customize
 
 ## Getting Started
 
-> ⚠️ Built for **Ubuntu 24.04** — use at your own risk on other systems.
+> ⚠️ Built for **Fedora Sericea** — use at your own risk on other systems.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/msh31/sway-env.git
-   cd sway-env
+   git clone -b fedora-sericea https://github.com/msh31/dotfiles.git
+   cd dotfiles
    ```
 
 2. Make the install scripts executable:
