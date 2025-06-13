@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 30,
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/weather"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "clock"],
+    "modules-right": ["pulseaudio", "network", "battery", "clock", "tray"],
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -19,6 +19,12 @@
             "default": ""
         }
     },
+    "custom/weather": {
+        "format": "{}",
+        "exec": "curl -s --max-time 2 -A 'Mozilla/5.0' 'https://wttr.in/?format=%c+%t+%C' || echo '󰖐 N/A'",
+        "interval": 1800,
+        "tooltip": false
+    },
     "clock": {
         "format": "{:%A, %B %d %Y - %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
@@ -30,8 +36,8 @@
         "tooltip-format": "{ifname} via {gwaddr} "
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
         "format-muted": " Muted",
         "format-icons": {
             "headphone": "",
@@ -42,5 +48,35 @@
             "default": ["", ""]
         },
         "scroll-step": 5
+    },
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "AC",
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰢜 {capacity}%",
+        "format-plugged": "󰂅 {capacity}%",
+        "format-alt": "{time}",
+        "format-icons": [
+            "󰁺", 
+            "󰁻", 
+            "󰁼", 
+            "󰁽", 
+            "󰁾", 
+            "󰁿", 
+            "󰂀", 
+            "󰂁", 
+            "󰂂", 
+            "󰁹"  
+        ]
+    },
+    "tray": {
+        "icon-size": 16,
+        "max-icon-size": 16,
+        "margin": 5
     }
 }

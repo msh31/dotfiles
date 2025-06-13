@@ -4,6 +4,7 @@
     font-size: 14px;
 }
 
+
 window#waybar {
     background-color: rgba(43, 48, 59, 0.9);
     color: #ffffff;
@@ -28,6 +29,7 @@ window#waybar {
     background-color: #eb4d4b;
 }
 
-#mode, #clock, #pulseaudio, #network, #window {
+#mode, #clock, #pulseaudio, #network, #battery, #custom-weather, #window, #tray {
     padding: 0 10px;
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", sans-serif;
 }
