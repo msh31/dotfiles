@@ -32,7 +32,6 @@ This setup includes customized dotfiles and install scripts to get a tiling Wayl
 3. Run the scripts:
    ```bash
    ./install_fonts.sh
-   ./install.sh
    ```
 
 4. Log out and choose the Sway session from your display manager, or run `sway` from a TTY.
