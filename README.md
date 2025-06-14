@@ -4,8 +4,7 @@ A minimal, fast, and keyboard-driven Sway (Wayland) desktop environment setup fo
 
 This setup includes customized dotfiles and install scripts to get a tiling Wayland session running with Sway, Waybar, and other utilities — all with a clean look and efficient workflow.
 
-<!-- gotta update this later -->
-![screenshot](https://i.imgur.com/NzYx7Fo.png)
+![screenshot](https://i.imgur.com/53IeaqQ.png)
 
 ## Features
 
