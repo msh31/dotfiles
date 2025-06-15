@@ -20,8 +20,7 @@ set $term foot
 # on the original workspace that the command was run on.
 set $rofi_cmd rofi \
         -terminal '$term'
-# Shows a combined list of the applications with desktop files and xecutables from PATH.
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
 # Swaybar no more, we usin Waybar
 # Kills the old bar and launches a new one on every reload
 exec_always --no-startup-id "killall -q waybar; sleep 0.2; waybar"
@@ -71,7 +70,7 @@ output * bg ~/Pictures/wallpaper.png fill
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec $rofi_cmd -show combi -combi-modes drun#run -modes combi
 
     # Start FIle Manager (Nemo)
     bindsym $mod+e exec nemo

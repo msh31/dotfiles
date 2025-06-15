@@ -6,7 +6,7 @@
 
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.9);
+    background-color: rgba(36, 36, 36, 0.9);
     color: #ffffff;
 }
 
@@ -29,7 +29,17 @@ window#waybar {
     background-color: #eb4d4b;
 }
 
-#mode, #clock, #pulseaudio, #network, #battery, #custom-weather, #window, #tray {
+#mode, #clock, #pulseaudio, #network, #battery, #custom-weather, #window, #tray, #custom-power {
     padding: 0 10px;
     font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", sans-serif;
+}
+
+#tray {
+    padding: 0 10px;
+    margin: 0 10px;
+}
+
+#custom-power {
+    padding-left: 10px;
+    padding-right: 10px;
 }

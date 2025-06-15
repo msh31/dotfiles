@@ -36,6 +36,9 @@ This setup includes customized dotfiles and install scripts to get a tiling Wayl
 
 4. Log out and choose the Sway session from your display manager, or run `sway` from a TTY.
 
+## Other customizations installed
+- [Spotlight for Rofi](https://github.com/newmanls/rofi-themes-collection?tab=readme-ov-file)
+
 ## License
 
 [MIT](./LICENSE)
