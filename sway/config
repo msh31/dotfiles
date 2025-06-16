@@ -6,6 +6,8 @@ exec blueman-applet &
 for_window [app_id="org.mozilla.firefox"] border none
 for_window [app_id="virt-manager"] border none
 for_window [app_id="com.vscodium.codium"] border none
+for_window [app_id="DBeaver"] border none
+for_window [app_id="com.usebottles.bottles"] border none
 
 ### Variables
 #
