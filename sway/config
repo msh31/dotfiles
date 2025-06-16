@@ -2,7 +2,10 @@
 #
 # the bluetooth tray icon widget
 exec blueman-applet &
-#
+# hide borders on certain apps
+for_window [app_id="org.mozilla.firefox"] border none
+for_window [app_id="virt-manager"] border none
+for_window [app_id="com.vscodium.codium"] border none
 
 ### Variables
 #
@@ -71,6 +74,9 @@ output * bg ~/Pictures/wallpaper.png fill
 
     # Start your launcher
     bindsym $mod+d exec $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
+    # Rofi with calc
+    bindsym $mod+shift+d exec rofi -show calc -modi calc -no-show-match -no-sort
 
     # Start FIle Manager (Nemo)
     bindsym $mod+e exec nemo

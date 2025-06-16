@@ -78,7 +78,7 @@
         "icon-size": 16,
         "max-icon-size": 16,
         "margin": 5,
-        "spacing": 10
+	"spacing": 10
     },
     "custom/power": {
         "format": "⏻",
