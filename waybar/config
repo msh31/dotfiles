@@ -33,7 +33,16 @@
         "format-wifi": "  {essid}",
         "format-ethernet": " {ifname}",
         "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname} via {gwaddr} "
+        "format-vpn": " VPN: {interface_name}", 
+        "format-vpn-disconnected": " VPN Off",
+
+        "tooltip-format-wifi": "ESSID: {essid}\nIP: {ipaddr}/{cidr}",
+        "tooltip-format-ethernet": "IP: {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "No Network",
+        "tooltip-format-vpn": "VPN: {interface_name} ({ipaddr}/{cidr})",
+
+        "on-click": "exec nmcli connection up 'poopvpn'",
+        "on-click-right": "exec nmcli connection down 'poopvpn'"
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",

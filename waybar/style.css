@@ -43,3 +43,14 @@ window#waybar {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+#network.vpn {
+    background-color: #12be2c;
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+#network.disconnected {
+    background-color: rgba(209, 18, 18, 0.9);
+    color: #cccccc;
+}
