@@ -214,7 +214,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Screenshot and copy to clipboard | Seems to cause a slight delay after taking a screenshot, odd.
-bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png && wl-copy < ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png
 # force blueman to be floating in the center instead of being a seperate window
 for_window [app_id="blueman-manager"] floating enable, move position center
 
