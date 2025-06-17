@@ -47,7 +47,8 @@
             "car": "",
             "default": ["", ""]
         },
-        "scroll-step": 5
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
     "battery": {
         "bat": "BAT0",
