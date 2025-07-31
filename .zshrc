@@ -1,6 +1,14 @@
 #
-#   hi there! this is my first zsh customization, i've only used bash before this so we'll see how it goes :d
+#   hi there! this is my first zsh customization, i've only used bash before this so we'll see how it goes :D
 #
+
+# oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
+
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
 
 # history settings
 HISTFILE=~/.zsh_history
@@ -51,6 +59,9 @@ git_prompt_info() {
 
 # enable prompt substitution
 setopt PROMPT_SUBST
+
+# enable autocorrect
+setopt CORRECT
 
 # da prompt
 PROMPT='%{%F{243}%}%n%{%F{245}%}@%{%F{249}%}%m %{%F{254}%}%~$(git_prompt_info) %{%f%}$ '
