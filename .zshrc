@@ -63,6 +63,9 @@ setopt PROMPT_SUBST
 # enable autocorrect
 setopt CORRECT
 
+# bind tab to accept autosuggestions
+bindkey '^I' autosuggest-accept
+
 # da prompt
 PROMPT='%{%F{243}%}%n%{%F{245}%}@%{%F{249}%}%m %{%F{254}%}%~$(git_prompt_info) %{%f%}$ '
 
