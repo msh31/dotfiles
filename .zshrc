@@ -1,11 +1,8 @@
 #
-#   Hi there! This is my first zsh customization, I've only used bash before this so we'll see how it goes :D
+#   hi there! this is my first zsh customization, i've only used bash before this so we'll see how it goes :d
 #
 
-# path to your oh-my-zsh installation
-# export ZSH="$HOME/.oh-my-zsh"
-
-# History settings
+# history settings
 HISTFILE=~/.zsh_history
 HISTSIZE=10000 # mem
 SAVEHIST=10000 # dsk
@@ -16,7 +13,7 @@ setopt HIST_IGNORE_SPACE
 
 # enable completion system
 autoload -Uz compinit
-compinit
+compinit -u
 
 # case insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -30,16 +27,33 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias grep='grep --color=auto'
 
-# git aliases
-alias wip='git add . && git commit -m "wip" && git push'
-
 # custom functions
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
 
+wip() {
+    local message="${1:-wip}"
+    git add . && git commit -m "$message" && git push
+}
+
+# git status function for prompt
+git_prompt_info() {
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        local branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+        local git_status=""
+        if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+            git_status="*"
+        fi
+        echo " %{%F{40}%}($branch$git_status)%{%f%}"
+    fi
+}
+
+# enable prompt substitution
+setopt PROMPT_SUBST
+
 # da prompt
-PROMPT='%F{cyan}%n@%m%f:%F{blue}%~%f$ '
+PROMPT='%{%F{243}%}%n%{%F{245}%}@%{%F{249}%}%m %{%F{254}%}%~$(git_prompt_info) %{%f%}$ '
 
 # load additional configurations
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
