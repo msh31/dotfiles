@@ -45,6 +45,10 @@ wip() {
     git add . && git commit -m "$message" && git push
 }
 
+code () { 
+    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
+}
+
 # git status function for prompt
 git_prompt_info() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
