@@ -55,6 +55,29 @@ edots() {
     ${EDITOR:-nano} "$DOTFILES"
 }
 
+grr() {
+    echo ""
+    echo "Marco's dotfiles helper"
+    echo ""
+    echo "Usage:"
+    echo "  grr              Show this help message"
+    echo ""
+    echo "Shortcuts & Aliases:"
+    echo "  mkcd <dir>       Make and cd into directory"
+    echo "  wip [msg]        Commit all changes with a message (default: 'wip')"
+    echo "  code             Open VS Code in current dir"
+    echo "  .. / ...         Go up one / two directories"
+    echo "  reload           Reloads the zsh config"
+    echo "  grep             Enhanced grep with color"
+    echo ""
+    echo "Examples:"
+    echo "  mkcd projects/new-app"
+    echo "  wip 'refactor login'"
+    echo ""
+    echo "🔧 Customize this in ~/.zshrc"
+    echo ""
+}
+
 code () { 
     VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }
