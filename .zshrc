@@ -116,7 +116,7 @@ setopt CORRECT
 bindkey '^I' autosuggest-accept
 
 # da prompt
-PROMPT='%{%F{243}%}%n%{%F{245}%}@%{%F{249}%}%m %{%F{254}%}%~$(git_prompt_info) %{%f%}$ '
+PROMPT='%{%F{243}%}%n%{%F{245}%}@%{%F{249}%}%m %{%F{254}%}%c$(git_prompt_info) %{%f%}$ '
 
 # load additional configurations
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
