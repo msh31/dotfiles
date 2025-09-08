@@ -8,7 +8,11 @@ export DOTFILES="$HOME/dotfiles"
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 
-plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+    zsh-autosuggestions 
+    zsh-syntax-highlighting
+    git    
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,6 +84,10 @@ grr() {
 
 code () { 
     VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
+}
+
+clion () { 
+    CLION_CWD="$PWD" open -n -b "com.jetbrains.CLion" --args "$@" ;
 }
 
 # git status function for prompt
