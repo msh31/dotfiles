@@ -41,6 +41,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias grep='grep --color=auto'
 
+# dev aliases
+sysctl -n hw.ncpu
+alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j$(sysctl -n hw.ncpu) && .."
+
 # custom functions
 mkcd() {
     mkdir -p "$1" && cd "$1"
