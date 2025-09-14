@@ -1,7 +1,7 @@
-theme = "pastel-dark"
+theme = "Builtin Pastel Dark"
 
 font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+font-size = 13
 
-window-height=24
-window-width=120
+window-height=32
+window-width=123
