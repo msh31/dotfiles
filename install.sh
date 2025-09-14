@@ -1,5 +1,6 @@
 # Symlinks
 ln -sf "$(pwd)/.zshrc" ~/.zshrc
+ln -sf "$(pwd)/.tmux.conf" ~/.tmux.conf
 
 mkdir -p ~/.config/ghostty
 mkdir -p ~/.config/nvim

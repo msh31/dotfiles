@@ -46,7 +46,23 @@ alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cm
 alias lg='lazygit'
 alias ld='lazydocker'
 
+# terminal tool aliases
+alias tls='tmux list-sessions'
+alias tat='tmux attach -t'
+alias tkl='tmux kill-server'
+alias tsf='tmux source-file ~/.tmux.conf'
+alias vim='nvim'
+
 # custom functions
+tm() {
+    if [[ $# -eq 1 ]]; then
+        tmux has-session -t $1 2>/dev/null && tmux attach -t $1 || tmux new-session -s $1
+    else
+        echo "Usage: tm <session-name>"
+        tmux list-sessions 2>/dev/null || echo "No active sessions"
+    fi
+}
+
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
