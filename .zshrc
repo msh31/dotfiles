@@ -73,7 +73,9 @@ wip() {
 }
 
 reload() {
-    source ~/.zshrc && echo "🔄 Reloaded .zshrc"
+    source ~/.zshrc &&
+    source ~/.tmux.conf && 
+    echo "reloaded configs!"
 }
 
 edots() {
