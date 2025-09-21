@@ -1,2 +1,2 @@
 require("marco.remap")
-print("hi again")
+print("Marco's NeoVim config loaded :D") 
