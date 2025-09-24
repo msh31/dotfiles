@@ -1,6 +1,4 @@
 require("marco.remap")
-
-vim.opt.number = true
-vim.opt.relativenumber = true
+require("marco.options")
 
 print("Marco's NeoVim config loaded :D") 
