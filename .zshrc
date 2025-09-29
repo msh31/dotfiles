@@ -29,6 +29,9 @@ setopt HIST_IGNORE_SPACE
 autoload -Uz compinit
 compinit -u
 
+#remaps
+bindkey -s '^f' 'sessionizer\n'
+
 # case insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
@@ -51,9 +54,14 @@ alias tls='tmux list-sessions'
 alias tat='tmux attach -t'
 alias tkl='tmux kill-server'
 alias tsf='tmux source-file ~/.tmux.conf'
+alias tms='~/Documents/projects/dotfiles/config/scripts/sessionizer.sh'
 alias vim='nvim'
 
 # custom functions
+sessionizer() {
+    ~/Documents/projects/dotfiles/config/scripts/sessionizer.sh
+}
+
 tm() {
     if [[ $# -eq 1 ]]; then
         tmux has-session -t $1 2>/dev/null && tmux attach -t $1 || tmux new-session -s $1
