@@ -2,6 +2,7 @@
 #   hi there! this is my first zsh customization, i've only used bash before this so we'll see how it goes :D
 #
 
+export PATH=/opt/homebrew/bin:$PATH
 export DOTFILES="$HOME/dotfiles"
 
 # oh-my-zsh
