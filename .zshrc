@@ -44,6 +44,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 alias ..='cd ..'
 alias ...='cd ../..'
 alias grep='grep --color=auto'
+alias nigga='sudo'
 
 # dev aliases
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j$(sysctl -n hw.ncpu) && .."
@@ -84,11 +85,11 @@ wip() {
 reload() {
     source ~/.zshrc &&
     source ~/.tmux.conf && 
-    echo "reloaded configs!"
+    echo "reloaded zsh & tmux configs!"
 }
 
 edots() {
-    ${EDITOR:-nano} "$DOTFILES"
+    ${EDITOR:-vim} "$DOTFILES"
 }
 
 grr() {
@@ -101,7 +102,6 @@ grr() {
     echo "Shortcuts & Aliases:"
     echo "  mkcd <dir>       Make and cd into directory"
     echo "  wip [msg]        Commit all changes with a message (default: 'wip')"
-    echo "  code             Open VS Code in current dir"
     echo "  .. / ...         Go up one / two directories"
     echo "  reload           Reloads the zsh config"
     echo "  grep             Enhanced grep with color"
@@ -112,14 +112,6 @@ grr() {
     echo ""
     echo "🔧 Customize this in ~/.zshrc"
     echo ""
-}
-
-code () { 
-    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
-}
-
-clion () { 
-    CLION_CWD="$PWD" open -n -b "com.jetbrains.CLion" --args "$@" ;
 }
 
 # git status function for prompt
