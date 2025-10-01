@@ -36,7 +36,7 @@ return {
                 vim.keymap.set("n", "rn", vim.lsp.buf.rename, opts)
                 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
             end
-
+            
             local defaults = {
                 on_attach = on_attach,
                 capabilities = capabilities,
