@@ -6,7 +6,7 @@ return {
 
     config = function()
         require 'nvim-treesitter.configs'.setup {
-            ensure_installed = { "lua", "javascript", "html", "css", "c", "cpp" },
+            ensure_installed = { "lua", "javascript", "html", "css" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
@@ -21,7 +21,7 @@ return {
 
             },
             indent = {
-                -- enable = true
+                enable = true
             },
         }
         --
