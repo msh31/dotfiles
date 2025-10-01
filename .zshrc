@@ -84,8 +84,7 @@ wip() {
 
 reload() {
     source ~/.zshrc &&
-    source ~/.tmux.conf && 
-    echo "reloaded zsh & tmux configs!"
+    echo "reloaded zsh"
 }
 
 edots() {
