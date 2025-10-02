@@ -1,10 +1,10 @@
 return {
     {
-        "mason-org/mason.nvim",
+        "williamboman/mason.nvim",
         opts = {}
     },
     {
-        "mason-org/mason-lspconfig.nvim",
+        "williamboman/mason-lspconfig.nvim",
         lazy = false,
         opts = {
             ensure_installed = {
@@ -18,9 +18,6 @@ return {
                 "phpactor",
             },
         },
-        config = function()
-        end,
-
     },
     {
         "neovim/nvim-lspconfig",
@@ -28,6 +25,7 @@ return {
 
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local lspconfig = require("lspconfig")
 
             local on_attach = function(client, bufnr)
                 local opts = { buffer = bufnr, silent = true }
@@ -36,72 +34,71 @@ return {
                 vim.keymap.set("n", "rn", vim.lsp.buf.rename, opts)
                 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
             end
-            
-            local defaults = {
+
+            -- Lua LSP with Love2D support
+            lspconfig.lua_ls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
-            }
-
-            local servers = {
-                "csharp_ls",
-                "csharp_ls",
-                "cssls",
-                "tailwindcss",
-                "jsonls",
-                "sqlls",
-                "eslint",
-                "tsserver",
-            }
-
-            for _, server in ipairs(servers) do
-                vim.lsp.enable(server)
-            end
-
-            -- lua_ls met extra instellingen
-            vim.lsp.config["lua_ls"] = vim.tbl_deep_extend("force", defaults, {
                 settings = {
                     Lua = {
-                        diagnostics = { globals = { "vim" } },
+                        runtime = {
+                            version = "LuaJIT",
+                        },
+                        diagnostics = {
+                            globals = { "vim", "love" },
+                        },
                         workspace = {
                             library = {
                                 [vim.fn.expand("$VIMRUNTIME/lua")] = true,
                                 [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                                [vim.fn.stdpath("data") .. "/lazy/ui/nvchad_types"] = true,
                                 [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
-                                [vim.fn.expand("${3rd}/love2d/library")] = true,
                             },
-                            maxPreload = 100000,
-                            preloadFileSize = 10000,
+                            checkThirdParty = false,
                         },
+                        telemetry = { enable = false },
                     },
                 },
             })
-            vim.lsp.enable("lua_ls")
 
-            vim.lsp.config["html"] = {
+            -- Other LSP servers
+            lspconfig.clangd.setup({
+                on_attach = function(client, bufnr)
+                    client.server_capabilities.signatureHelpProvider = false
+                    on_attach(client, bufnr)
+                end,
                 capabilities = capabilities,
-                filetypes = { "html", "php", "blade", },
-            }
-            vim.lsp.enable("html")
+            })
 
-            vim.lsp.config["phpactor"] = vim.tbl_deep_extend("force", defaults, {
+            lspconfig.cssls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+
+            lspconfig.html.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                filetypes = { "html", "php", "blade" },
+            })
+
+            lspconfig.phpactor.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
                 init_options = {
                     ["language_server_phpstan.enabled"] = false,
                     ["language_server_psalm.enabled"] = false,
                 },
                 filetypes = { "php", "html", "blade" },
             })
-            vim.lsp.enable("phpactor")
 
-            -- clangd met override
-            vim.lsp.config["clangd"] = vim.tbl_deep_extend("force", defaults, {
-                on_attach = function(client, bufnr)
-                    client.server_capabilities.signatureHelpProvider = false
-                    on_attach(client, bufnr) -- wel je eigen mappings nog meegeven
-                end,
+            lspconfig.jsonls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
             })
-            vim.lsp.enable("clangd")
+
+            lspconfig.eslint.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
         end,
     },
-
 }
