@@ -1,3 +1,3 @@
-require("michiel")
-require("michiel.config.lazy")
+require("marco")
+require("marco.config.lazy")
 
