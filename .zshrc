@@ -9,6 +9,9 @@ export DOTFILES="$HOME/dotfiles"
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 
+ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+
 plugins=(
     zsh-autosuggestions 
     zsh-syntax-highlighting
