@@ -61,7 +61,10 @@ return {
             vim.lsp.config["lua_ls"] = vim.tbl_deep_extend("force", defaults, {
                 settings = {
                     Lua = {
-                        diagnostics = { globals = { "vim" } },
+                        diagnostics = {
+                            globals = { "vim" } ,
+                            disable = { "lowercase-global" }
+                        },
                         workspace = {
                             library = {
                                 [vim.fn.expand("$VIMRUNTIME/lua")] = true,
@@ -76,7 +79,6 @@ return {
                     },
                 },
             })
-            vim.lsp.enable("lua_ls")
 
             vim.lsp.config["html"] = {
                 capabilities = capabilities,
