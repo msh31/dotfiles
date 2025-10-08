@@ -12,3 +12,8 @@ background = 000000
 background-opacity = 0.5
 background-blur = 90
 
+#This disables the warning before closing a window
+confirm-close-surface = false
+
+#When begin typing the mouse is not visible
+mouse-hide-while-typing
