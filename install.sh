@@ -1,6 +1,7 @@
 # Symlinks
 ln -sf "$(pwd)/.zshrc" ~/.zshrc
 ln -sf "$(pwd)/.tmux.conf" ~/.tmux.conf
+ln -sf "$(pwd)/.aerospace.toml" ~/.aerospace.toml
 
 mkdir -p ~/.config/ghostty
 
