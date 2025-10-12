@@ -135,7 +135,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-u = 'workspace U'
     alt-v = 'workspace V'
     alt-w = 'workspace W'
-    alt-x = 'workspace X'
+    # alt-x = 'workspace X'
     alt-y = 'workspace Y'
     alt-z = 'workspace Z'
 
