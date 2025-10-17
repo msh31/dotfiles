@@ -53,6 +53,7 @@ alias nigga='sudo'
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j$(sysctl -n hw.ncpu) && .."
 alias lg='lazygit'
 alias ld='lazydocker'
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
 # terminal tool aliases
 alias tls='tmux list-sessions'
