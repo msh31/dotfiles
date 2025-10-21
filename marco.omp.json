@@ -14,10 +14,15 @@
           "type": "os"
         },
         {
-          "foreground": "#26C6DA",
+          "type": "session",
           "style": "plain",
-          "template": " {{ .UserName }}: ",
-          "type": "session"
+          "foreground": "#26C6DA",
+          "properties": {
+            "user": true,
+            "host": true,
+            "host_prefix": "@ ",
+            "host_suffix": ": "
+          }
         },
         {
           "foreground": "lightGreen",
