@@ -44,7 +44,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 alias ..='cd ..'
 alias ...='cd ../..'
 alias grep='grep --color=auto'
-alias nigga='sudo'
 
 # dev aliases
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j$(sysctl -n hw.ncpu) && .."
