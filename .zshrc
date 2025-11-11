@@ -40,8 +40,8 @@ bindkey -s '^f' 'sessionizer\n'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # colored output
-export CLICOLOR=1a
-export LSCOLORS=GxFxCxDxBxegedabagaced
+export CLICOLOR=1
+# export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # basic aliases
 alias ..='cd ..'
@@ -88,7 +88,7 @@ wip() {
 }
 
 reload() {
-    source ~/.zshrc &&
+    source ~/.zshrc
     echo "reloaded zsh"
 }
 
