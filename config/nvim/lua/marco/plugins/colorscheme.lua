@@ -11,4 +11,12 @@ return {
     end,
   },
 }
-
+--
+--
+-- return { 
+--     "lunarvim/templeos.nvim",
+--
+--     config = function()
+--         vim.cmd("colorscheme templeos")
+--     end
+-- }
