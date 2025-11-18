@@ -24,4 +24,4 @@ confirm-close-surface = false
 mouse-hide-while-typing
 
 # shaderzzz
-custom-shader = shaders/drunkard.glsl
+# custom-shader = shaders/drunkard.glsl
