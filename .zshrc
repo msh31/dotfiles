@@ -54,7 +54,8 @@ alias lg='lazygit'
 alias ld='lazydocker'
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias runrust='cargo run --' # just shorter...
-alias list_esp='ls /dev/cu.*'
+alias lsesp='ls /dev/cu.*'
+alias gcp'git clone https://github.com/msh31/'
 
 # terminal tool aliases
 alias tls='tmux list-sessions'
