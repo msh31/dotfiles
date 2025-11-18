@@ -3,8 +3,8 @@ command = "/usr/bin/arch -arm64 /bin/zsh"
 term = "xterm-256color"
 theme = "Builtin Pastel Dark"
 
-# font-family = "JetBrainsMono Nerd Font"
-font-family = "templeos"
+font-family = "JetBrainsMono Nerd Font"
+# font-family = "templeos"
 font-size = 13
 
 window-height=32
@@ -22,3 +22,6 @@ confirm-close-surface = false
 
 #When begin typing the mouse is not visible
 mouse-hide-while-typing
+
+# shaderzzz
+custom-shader = shaders/drunkard.glsl
