@@ -10,9 +10,9 @@ font-size = 13
 window-height=32
 window-width=123
 
-background = 000000
-background-opacity = 0.5
-background-blur = 90
+background = 282828
+# background-opacity = 0.5
+# background-blur = 90
 
 macos-titlebar-style = hidden
 #macos-non-native-fullscreen = true
