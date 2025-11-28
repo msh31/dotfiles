@@ -56,6 +56,7 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias runrust='cargo run --' # just shorter...
 alias lsesp='ls /dev/cu.*'
 alias gcp'git clone https://github.com/msh31/'
+alias flashesp='idf.py flash -p /dev/cu.usbserial-0001 monitor' # only works for 1 esp, maybe add args
 
 # terminal tool aliases
 alias tls='tmux list-sessions'
