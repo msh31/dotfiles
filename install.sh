@@ -9,3 +9,4 @@ ln -sf "$(pwd)/config/ghostty/shaders" ~/.config/ghostty/shaders
 ln -sf "$(pwd)/config/nvim" ~/.config/nvim
 
 ln -sf "$(pwd)/config/waybar" ~/.config/waybar
+ln -sf "$(pwd)/config/hypr" ~/.config/hypr
