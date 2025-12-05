@@ -2,7 +2,6 @@
 #   hi there! this is my first zsh customization, i've only used bash before this so we'll see how it goes :D
 #
 
-export PATH=/opt/homebrew/bin:$PATH
 export DOTFILES="$HOME/dotfiles"
 
 # oh-my-zsh
@@ -47,9 +46,10 @@ export CLICOLOR=1
 alias ..='cd ..'
 alias ...='cd ../..'
 alias grep='grep --color=auto'
+alias rbar='killall waybar && waybar &'
 
 # dev aliases
-alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j$(sysctl -n hw.ncpu) && .."
+alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j16 && .."
 alias lg='lazygit'
 alias ld='lazydocker'
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
@@ -63,12 +63,11 @@ alias tls='tmux list-sessions'
 alias tat='tmux attach -t'
 alias tkl='tmux kill-server'
 alias tsf='tmux source-file ~/.tmux.conf'
-alias tms='~/Documents/projects/dotfiles/config/scripts/sessionizer.sh'
 alias vim='nvim'
 
 # custom functions
 sessionizer() {
-    ~/Documents/projects/dotfiles/config/scripts/sessionizer.sh
+    ~/programming/dotfiles/config/scripts/sessionizer.sh
 }
 
 tm() {
