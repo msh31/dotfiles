@@ -10,3 +10,5 @@ ln -sf "$(pwd)/config/nvim" ~/.config/nvim
 
 ln -sf "$(pwd)/config/hyprpanel" ~/.config/hyprpanel
 ln -sf "$(pwd)/config/hypr" ~/.config/hypr
+
+ln -sf "$(pwd)/config/wofi" ~/.config/wofi
