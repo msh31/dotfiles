@@ -1,12 +1,12 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    branch = 'master',
+    branch = 'main',
     lazy = false,
     build = ":TSUpdate",
 
     config = function()
         require 'nvim-treesitter.configs'.setup {
-            ensure_installed = { "lua", "javascript", "html", "css" },
+            ensure_installed = { "cpp", "c" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,
