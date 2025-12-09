@@ -12,3 +12,6 @@ ln -sf "$(pwd)/config/hyprpanel" ~/.config/hyprpanel
 ln -sf "$(pwd)/config/hypr" ~/.config/hypr
 
 ln -sf "$(pwd)/config/wofi" ~/.config/wofi
+
+ln -sf "$(pwd)/config/gtk-3.0" ~/.config/gtk-3.0
+ln -sf "$(pwd)/config/gtk-4.0" ~/.config/gtk-4.0
