@@ -46,7 +46,7 @@ export CLICOLOR=1
 alias ..='cd ..'
 alias ...='cd ../..'
 alias grep='grep --color=auto'
-alias rbar='killall waybar && waybar &'
+alias rbar='pkill -9 -f 'hyprpanel' || true && pkill -9 -f 'gjs' || true && hyprpanel &'
 
 # dev aliases
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j16 && .."
