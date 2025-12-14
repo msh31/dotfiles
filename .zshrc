@@ -47,15 +47,16 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias grep='grep --color=auto'
 alias rbar='pkill -9 -f 'hyprpanel' || true && pkill -9 -f 'gjs' || true && hyprpanel &'
+alias ewall='vim ~/.config/systemd/user/linux-wallpaperengine.service' # edit wallpaper, yes its a systemd service.
+alias kwall='pkill -f linux-wallpaperengine'
 
 # dev aliases
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j16 && .."
 alias lg='lazygit'
 alias ld='lazydocker'
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias getidf='. $HOME/esp/esp-idf/export.sh'
 alias runrust='cargo run --' # just shorter...
 alias lsesp='ls /dev/cu.*'
-alias gcp='git clone https://github.com/msh31/'
 alias flashesp='idf.py flash -p /dev/cu.usbserial-0001 monitor' # only works for 1 esp, maybe add args
 
 # terminal tool aliases
