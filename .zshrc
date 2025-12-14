@@ -52,7 +52,7 @@ alias grep='grep --color=auto'
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j$(sysctl -n hw.ncpu) && .."
 alias lg='lazygit'
 alias ld='lazydocker'
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias getidf='. $HOME/esp/esp-idf/export.sh'
 alias runrust='cargo run --' # just shorter...
 alias lsesp='ls /dev/cu.*'
 alias gcp'git clone https://github.com/msh31/'
