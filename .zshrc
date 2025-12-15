@@ -49,6 +49,7 @@ alias grep='grep --color=auto'
 alias rbar='pkill -9 -f 'hyprpanel' || true && pkill -9 -f 'gjs' || true && hyprpanel &'
 alias ewall='vim ~/.config/systemd/user/linux-wallpaperengine.service' # edit wallpaper, yes its a systemd service.
 alias kwall='pkill -f linux-wallpaperengine'
+alias swall='systemctl --user enable --now linux-wallpaperengine.service'
 
 # dev aliases
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j16 && .."
@@ -82,6 +83,16 @@ tm() {
 
 mkcd() {
     mkdir -p "$1" && cd "$1"
+}
+
+rmon() {
+    hyprctl keyword monitor "DP-3,disable"
+    hyprctl keyword monitor "DP-2,disable"
+}
+
+rmoff() {
+    hyprctl keyword monitor "DP-3,2560x1440@180,0x0,1"
+    hyprctl keyword monitor "DP-2,1920x1080@60,5120x0,1,transform,1"
 }
 
 wip() {
