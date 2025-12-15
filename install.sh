@@ -16,3 +16,6 @@ ln -sf "$(pwd)/config/foot" ~/.config/foot
 
 ln -sf "$(pwd)/config/gtk-3.0" ~/.config/gtk-3.0
 ln -sf "$(pwd)/config/gtk-4.0" ~/.config/gtk-4.0
+
+ln -sf "$(pwd)/config/xdg-desktop-portal" ~/.config/xdg-desktop-portal
+ln -sf "$(pwd)/config/xdg-desktop-portal-hyprland" ~/.config/xdg-desktop-portal-hyprland
