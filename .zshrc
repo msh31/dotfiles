@@ -50,6 +50,8 @@ alias rbar='pkill -9 -f 'hyprpanel' || true && pkill -9 -f 'gjs' || true && hypr
 alias ewall='vim ~/.config/systemd/user/linux-wallpaperengine.service' # edit wallpaper, yes its a systemd service.
 alias kwall='pkill -f linux-wallpaperengine'
 alias swall='systemctl --user enable --now linux-wallpaperengine.service'
+alias vpnup='wg-quick up it-mil-wg-002'
+alias vpndown='wg-quick down it-mil-wg-002'
 
 # dev aliases
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j16 && .."
