@@ -65,6 +65,8 @@ alias getidf='. $HOME/esp/esp-idf/export.sh'
 alias runrust='cargo run --' # just shorter...
 alias lsesp='ls /dev/cu.*'
 alias flashesp='idf.py flash -p /dev/cu.usbserial-0001 monitor' # only works for 1 esp, maybe add args
+alias sail='./vendor/bin/sail'
+alias leakchk='valgrind --leak-check=full' # needs binary name too! like ./transpiler src/comparisions.c4
 
 # terminal tool aliases
 alias tls='tmux list-sessions'
