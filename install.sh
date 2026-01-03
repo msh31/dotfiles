@@ -21,3 +21,5 @@ ln -sf "$(pwd)/config/xdg-desktop-portal" ~/.config/xdg-desktop-portal
 ln -sf "$(pwd)/config/xdg-desktop-portal-hyprland" ~/.config/xdg-desktop-portal-hyprland
 
 ln -sf "$(pwd)/config/scripts" ~/.config/scripts
+
+ln -sf "$(pwd)/config/awesome" ~/.config/awesome
