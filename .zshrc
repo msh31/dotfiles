@@ -75,6 +75,10 @@ alias tkl='tmux kill-server'
 alias tsf='tmux source-file ~/.tmux.conf'
 alias vim='nvim'
 
+# game aliases
+alias sg='hyprctl keyword monitor "DP-2,disable"'
+alias ug='hyprctl reload'
+
 # custom functions
 sessionizer() {
     ~/programming/dotfiles/config/scripts/sessionizer.sh
@@ -165,3 +169,4 @@ PROMPT='%{%F{243}%}%n%{%F{245}%}@%{%F{249}%}%m %{%F{254}%}%c$(git_prompt_info) %
 
 # load additional configurations
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+export PATH=$HOME/.local/bin:$PATH
