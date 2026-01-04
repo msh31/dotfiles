@@ -23,3 +23,6 @@ ln -sf "$(pwd)/config/xdg-desktop-portal-hyprland" ~/.config/xdg-desktop-portal-
 ln -sf "$(pwd)/config/scripts" ~/.config/scripts
 
 ln -sf "$(pwd)/config/awesome" ~/.config/awesome
+
+ln -sf "$(pwd)/config/wireplumber" ~/.config/wireplumber
+
