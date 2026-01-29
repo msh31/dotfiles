@@ -26,3 +26,7 @@ ln -sf "$(pwd)/config/awesome" ~/.config/awesome
 
 ln -sf "$(pwd)/config/wireplumber" ~/.config/wireplumber
 
+sudo mkdir -p /etc/keyd
+sudo ln -sf "$(pwd)/service-configs/keyd/semico.conf" /etc/keyd/semico.conf
+
+sudo ln -sf "$(pwd)/config/gamemode" ~/.config/gamemode
