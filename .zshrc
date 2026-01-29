@@ -61,10 +61,10 @@ alias vpndown='wg-quick down it-mil-wg-002'
 alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j16 && .."
 alias lg='lazygit'
 alias ld='lazydocker'
-alias getidf='. $HOME/esp/esp-idf/export.sh'
+alias getidf='. /opt/esp-idf/export.sh'
 alias runrust='cargo run --' # just shorter...
-alias lsesp='ls /dev/cu.*'
-alias flashesp='idf.py flash -p /dev/cu.usbserial-0001 monitor' # only works for 1 esp, maybe add args
+alias lsesp='ls /dev/tty*'
+alias flashesp='idf.py -p /dev/ttyUSB0 flash monitor' # only works for 1 esp, maybe add args
 alias sail='./vendor/bin/sail'
 alias leakchk='valgrind --leak-check=full' # needs binary name too! like ./transpiler src/comparisions.c4
 
@@ -119,6 +119,11 @@ reload() {
 
 edots() {
     ${EDITOR:-vim} "$DOTFILES"
+}
+
+winboot() {
+    sudo efibootmgr -n 0003
+    sudo reboot
 }
 
 grr() {
