@@ -9,6 +9,8 @@ ln -sf "$(pwd)/config/ghostty/shaders" ~/.config/ghostty/shaders
 ln -sf "$(pwd)/config/nvim" ~/.config/nvim
 
 ln -sf "$(pwd)/config/hyprpanel" ~/.config/hyprpanel
+
+rm -rf ~/.config/hypr
 ln -sf "$(pwd)/config/hypr" ~/.config/hypr
 
 ln -sf "$(pwd)/config/wofi" ~/.config/wofi
@@ -30,3 +32,4 @@ sudo mkdir -p /etc/keyd
 sudo ln -sf "$(pwd)/service-configs/keyd/semico.conf" /etc/keyd/semico.conf
 
 sudo ln -sf "$(pwd)/config/gamemode" ~/.config/gamemode
+ln -sf "$(pwd)/config/quickshell" ~/.config/quickshell
