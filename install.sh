@@ -32,4 +32,4 @@ sudo mkdir -p /etc/keyd
 sudo ln -sf "$(pwd)/service-configs/keyd/semico.conf" /etc/keyd/semico.conf
 
 sudo ln -sf "$(pwd)/config/gamemode" ~/.config/gamemode
-ln -sf "$(pwd)/config/quickshell" ~/.config/quickshell
+ln -sf "$(pwd)/config/noctalia" ~/.config/noctalia
