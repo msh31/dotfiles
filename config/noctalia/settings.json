@@ -312,6 +312,31 @@
         "enabled": true,
         "gridSnap": false,
         "monitorWidgets": [
+            {
+                "name": "DP-1",
+                "widgets": [
+                    {
+                        "id": "Weather",
+                        "scale": 1,
+                        "showBackground": true,
+                        "x": 31,
+                        "y": 66
+                    },
+                    {
+                        "hideMode": "visible",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": true,
+                        "visualizerType": "linear",
+                        "x": 2141,
+                        "y": 67
+                    }
+                ]
+            }
         ]
     },
     "dock": {
