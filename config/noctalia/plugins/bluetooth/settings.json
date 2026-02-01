@@ -1,0 +1,5 @@
+{
+  "refreshInterval": 3000,
+  "compactMode": false,
+  "showDeviceCount": true
+}

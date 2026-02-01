@@ -1,0 +1,26 @@
+{
+  "id": "bluetooth",
+  "name": "Bluetooth",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "4.0.0",
+  "author": "mxrco007",
+  "license": "MIT",
+  "description": "Bluetooth status and control",
+  "tags": ["Bar", "System", "Panel"],
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {
+      "refreshInterval": 3000,
+      "compactMode": false,
+      "showDeviceCount": true
+    }
+  }
+}
