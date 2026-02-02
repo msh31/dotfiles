@@ -53,15 +53,10 @@ alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cm
 alias lg='lazygit'
 alias ld='lazydocker'
 alias getidf='. $HOME/esp/esp-idf/export.sh'
-alias runrust='cargo run --' # just shorter...
 alias lsesp='ls /dev/cu.*'
-alias gcp='git clone https://github.com/msh31/'
 alias flashesp='idf.py flash -p /dev/cu.usbserial-0001 monitor' # only works for 1 esp, maybe add args
 
 # terminal tool aliases
-alias tls='tmux list-sessions'
-alias tat='tmux attach -t'
-alias tkl='tmux kill-server'
 alias tsf='tmux source-file ~/.tmux.conf'
 alias tms='~/Documents/projects/dotfiles/config/scripts/sessionizer.sh'
 alias vim='nvim'
@@ -95,29 +90,7 @@ reload() {
 }
 
 edots() {
-    ${EDITOR:-vim} "$DOTFILES"
-}
-
-grr() {
-    echo ""
-    echo "Marco's dotfiles helper"
-    echo ""
-    echo "Usage:"
-    echo "  grr              Show this help message"
-    echo ""
-    echo "Shortcuts & Aliases:"
-    echo "  mkcd <dir>       Make and cd into directory"
-    echo "  wip [msg]        Commit all changes with a message (default: 'wip')"
-    echo "  .. / ...         Go up one / two directories"
-    echo "  reload           Reloads the zsh config"
-    echo "  grep             Enhanced grep with color"
-    echo ""
-    echo "Examples:"
-    echo "  mkcd projects/new-app"
-    echo "  wip 'refactor login'"
-    echo ""
-    echo "🔧 Customize this in ~/.zshrc"
-    echo ""
+    ${EDITOR:-nvim} "$DOTFILES"
 }
 
 # git status function for prompt
