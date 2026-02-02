@@ -1,6 +1,8 @@
 #
 #   hi there! this is my first zsh customization, i've only used bash before this so we'll see how it goes :D
 #
+# dev exports
+export CMAKE_GENERATOR=Ninja
 
 export DOTFILES="$HOME/dotfiles"
 
