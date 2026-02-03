@@ -3,6 +3,7 @@
 #
 # dev exports
 export CMAKE_GENERATOR=Ninja
+export VCPKG_ROOT=~/vcpkg
 
 export DOTFILES="$HOME/dotfiles"
 
@@ -60,7 +61,6 @@ alias vpnup='wg-quick up it-mil-wg-002'
 alias vpndown='wg-quick down it-mil-wg-002'
 
 # dev aliases
-alias build-windows="mkcd build-windows && cmake .. -DCMAKE_TOOLCHAIN_FILE=../cmake/windows-toolchain.cmake -DBUILD_EXAMPLES=ON && cmake --build . -j16 && .."
 alias lg='lazygit'
 alias ld='lazydocker'
 alias getidf='. /opt/esp-idf/export.sh'
