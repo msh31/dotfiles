@@ -144,13 +144,19 @@
                     "unreadBadgeColor": "primary"
                 },
                 {
+                    "defaultSettings": {
+                        "position": "Bottom"
+                    },
+                    "id": "plugin:clipper"
+                },
+                {
                     "deviceNativePath": "",
                     "displayMode": "onhover",
                     "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
-                    "showNoctaliaPerformance": false,
-                    "showPowerProfiles": false,
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true,
                     "warningThreshold": 30
                 },
                 {
@@ -159,11 +165,11 @@
                     "middleClickCommand": "pwvucontrol || pavucontrol"
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "id": "Bluetooth"
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "id": "VPN"
                 },
                 {
@@ -218,12 +224,6 @@
                 {
                     "colorName": "error",
                     "id": "SessionMenu"
-                },
-                {
-                    "defaultSettings": {
-                        "position": "Bottom"
-                    },
-                    "id": "plugin:clipper"
                 }
             ]
         }
