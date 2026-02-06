@@ -95,14 +95,18 @@ return {
             })
             vim.lsp.enable("phpactor")
 
-            -- clangd met override
             vim.lsp.config["clangd"] = vim.tbl_deep_extend("force", defaults, {
+                cmd = {
+                    "clangd",
+                    "--compile-commands-dir=build",
+                },
                 on_attach = function(client, bufnr)
                     client.server_capabilities.signatureHelpProvider = false
-                    on_attach(client, bufnr) -- wel je eigen mappings nog meegeven
+                    on_attach(client, bufnr)
                 end,
             })
             vim.lsp.enable("clangd")
+
         end,
     },
 
