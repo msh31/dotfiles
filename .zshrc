@@ -4,6 +4,9 @@
 # dev exports
 export CMAKE_GENERATOR=Ninja
 export VCPKG_ROOT=~/vcpkg
+export PATH=$HOME/.local/bin:$PATH
+export PSPDEV=/usr/local/pspdev
+export PATH=$PATH:$PSPDEV/bin
 
 export DOTFILES="$HOME/dotfiles"
 
@@ -176,4 +179,3 @@ PROMPT='%{%F{243}%}%n%{%F{245}%}@%{%F{249}%}%m %{%F{254}%}%c$(git_prompt_info) %
 
 # load additional configurations
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-export PATH=$HOME/.local/bin:$PATH
