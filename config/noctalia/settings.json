@@ -158,6 +158,9 @@
                     "id": "plugin:clipper"
                 },
                 {
+                    "id": "plugin:mini-docker"
+                },
+                {
                     "deviceNativePath": "",
                     "displayMode": "onhover",
                     "hideIfIdle": false,
