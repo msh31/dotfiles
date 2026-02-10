@@ -72,6 +72,7 @@ alias lsesp='ls /dev/tty*'
 alias flashesp='idf.py -p /dev/ttyUSB0 flash monitor' # only works for 1 esp, maybe add args
 alias sail='./vendor/bin/sail'
 alias leakchk='valgrind --leak-check=full' # needs binary name too! like ./transpiler src/comparisions.c4
+alias x64dbg='wine ~/x64dbg/release/x64/x64dbg.exe'
 
 # terminal tool aliases
 alias tls='tmux list-sessions'
