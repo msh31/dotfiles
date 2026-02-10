@@ -7,8 +7,8 @@ export VCPKG_ROOT=~/vcpkg
 export PATH=$HOME/.local/bin:$PATH
 export PSPDEV=/usr/local/pspdev
 export PATH=$PATH:$PSPDEV/bin
-
-export DOTFILES="$HOME/dotfiles"
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+export DOTFILES="$HOME/programming/dotfiles"
 
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
