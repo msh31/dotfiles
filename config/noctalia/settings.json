@@ -158,6 +158,9 @@
                     "id": "plugin:clipper"
                 },
                 {
+                    "defaultSettings": {
+                        "refreshInterval": 5000
+                    },
                     "id": "plugin:mini-docker"
                 },
                 {
