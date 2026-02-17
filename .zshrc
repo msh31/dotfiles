@@ -64,7 +64,7 @@ alias vim='nvim'
 
 # custom functions
 sessionizer() {
-    ~/Documents/projects/dotfiles/config/scripts/sessionizer.sh
+    ~/programming/dotfiles/config/scripts/sessionizer.sh
 }
 
 tm() {
