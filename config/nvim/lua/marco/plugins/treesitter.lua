@@ -1,11 +1,12 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     branch = 'main',
-    lazy = false,
+    lazy = true,
+    event = "VeryLazy",
     build = ":TSUpdate",
 
     config = function()
-        require 'nvim-treesitter.configs'.setup {
+        require 'nvim-treesitter.config'.setup {
             ensure_installed = { "cpp", "c" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
