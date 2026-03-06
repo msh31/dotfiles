@@ -5,6 +5,7 @@
 export PATH=/opt/homebrew/bin:$PATH
 export DOTFILES="$HOME/dotfiles"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/Applications/CMake.app/Contents/bin:$PATH"
 
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
@@ -92,6 +93,13 @@ reload() {
 
 edots() {
     ${EDITOR:-nvim} "$DOTFILES"
+}
+
+steep() {
+  brew update
+  brew upgrade
+  brew cask upgrade
+  brew cleanup
 }
 
 # git status function for prompt
