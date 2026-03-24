@@ -7,6 +7,11 @@ export DOTFILES="$HOME/dotfiles"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/Applications/CMake.app/Contents/bin:$PATH"
 
+# bun (completions) 
+[ -s "/Users/marco/.bun/_bun" ] && source "/Users/marco/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
@@ -128,3 +133,8 @@ PROMPT='%{%F{243}%}%n%{%F{245}%}@%{%F{249}%}%m %{%F{254}%}%c$(git_prompt_info) %
 
 # load additional configurations
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/marco/.lmstudio/bin"
+# End of LM Studio CLI section
+
