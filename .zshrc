@@ -62,6 +62,7 @@ alias ld='lazydocker'
 alias getidf='. $HOME/esp/esp-idf/export.sh'
 alias lsesp='ls /dev/cu.*'
 alias flashesp='idf.py flash -p /dev/cu.usbserial-0001 monitor' # only works for 1 esp, maybe add args
+alias nproc="sysctl -n hw.physicalcpu" # linux alias
 
 # terminal tool aliases
 alias tsf='tmux source-file ~/.tmux.conf'

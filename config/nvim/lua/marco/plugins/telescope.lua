@@ -8,7 +8,7 @@ return {
 
     telescope.setup{
       defaults = {
-        file_ignore_patterns = { "external/" }, 
+        file_ignore_patterns = { "external/", "build/", ".cache/" }, 
       },
     }
 
